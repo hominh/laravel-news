@@ -1,0 +1,75 @@
+
+.cat-15, .cat-title.cat-15 { background: #d70060; }
+.navigation .menu .menu-cat-15 .mega-menu { border-bottom-color: #d70060; }
+.news-focus .heading.cat-15 .subcats .active, .news-focus .heading.cat-15, .cat-text-15 {  color: #d70060;  }
+
+.navigation .menu > .menu-cat-15:hover > a, .navigation .menu > .menu-cat-15.current-menu-item > a, .navigation .menu > .menu-cat-15.current-menu-parent > a {
+	border-bottom-color: #d70060;
+}
+
+body.boxed.category-15 { background: url(http://theme-sphere.com/smart-mag/wp-content/uploads/2013/07/9278066227_ae25452933_b1.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; background-size: cover; }
+
+.cat-14, .cat-title.cat-14 { background: #d4301a; }
+.navigation .menu .menu-cat-14 .mega-menu { border-bottom-color: #d4301a; }
+.news-focus .heading.cat-14 .subcats .active, .news-focus .heading.cat-14, .cat-text-14 {  color: #d4301a;  }
+
+.navigation .menu > .menu-cat-14:hover > a, .navigation .menu > .menu-cat-14.current-menu-item > a, .navigation .menu > .menu-cat-14.current-menu-parent > a {
+	border-bottom-color: #d4301a;
+}
+
+
+.cat-19, .cat-title.cat-19 { background: #32742c; }
+.navigation .menu .menu-cat-19 .mega-menu { border-bottom-color: #32742c; }
+.news-focus .heading.cat-19 .subcats .active, .news-focus .heading.cat-19, .cat-text-19 {  color: #32742c;  }
+
+.navigation .menu > .menu-cat-19:hover > a, .navigation .menu > .menu-cat-19.current-menu-item > a, .navigation .menu > .menu-cat-19.current-menu-parent > a {
+	border-bottom-color: #32742c;
+}
+
+
+.cat-16, .cat-title.cat-16 { background: #32742c; }
+.navigation .menu .menu-cat-16 .mega-menu { border-bottom-color: #32742c; }
+.news-focus .heading.cat-16 .subcats .active, .news-focus .heading.cat-16, .cat-text-16 {  color: #32742c;  }
+
+.navigation .menu > .menu-cat-16:hover > a, .navigation .menu > .menu-cat-16.current-menu-item > a, .navigation .menu > .menu-cat-16.current-menu-parent > a {
+	border-bottom-color: #32742c;
+}
+
+
+.cat-17, .cat-title.cat-17 { background: #e67e22; }
+.navigation .menu .menu-cat-17 .mega-menu { border-bottom-color: #e67e22; }
+.news-focus .heading.cat-17 .subcats .active, .news-focus .heading.cat-17, .cat-text-17 {  color: #e67e22;  }
+
+.navigation .menu > .menu-cat-17:hover > a, .navigation .menu > .menu-cat-17.current-menu-item > a, .navigation .menu > .menu-cat-17.current-menu-parent > a {
+	border-bottom-color: #e67e22;
+}
+
+
+.cat-27, .cat-title.cat-27 { background: #2980b9; }
+.navigation .menu .menu-cat-27 .mega-menu { border-bottom-color: #2980b9; }
+.news-focus .heading.cat-27 .subcats .active, .news-focus .heading.cat-27, .cat-text-27 {  color: #2980b9;  }
+
+.navigation .menu > .menu-cat-27:hover > a, .navigation .menu > .menu-cat-27.current-menu-item > a, .navigation .menu > .menu-cat-27.current-menu-parent > a {
+	border-bottom-color: #2980b9;
+}
+
+
+.cat-18, .cat-title.cat-18 { background: #3498db; }
+.navigation .menu .menu-cat-18 .mega-menu { border-bottom-color: #3498db; }
+.news-focus .heading.cat-18 .subcats .active, .news-focus .heading.cat-18, .cat-text-18 {  color: #3498db;  }
+
+.navigation .menu > .menu-cat-18:hover > a, .navigation .menu > .menu-cat-18.current-menu-item > a, .navigation .menu > .menu-cat-18.current-menu-parent > a {
+	border-bottom-color: #3498db;
+}
+
+
+body.boxed {
+
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center center;
+-webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; 
+background-size: cover;
+background-image: url('http://theme-sphere.com/smart-mag/wp-content/uploads/2014/01/5-4yas-4415263267_3c62eecb99_o.jpg');
+
+}
