@@ -60,11 +60,7 @@ class PostController extends Controller
 
     public function getDelete($id)
     {
-        $post_detail = post::find($id)->pimages->toArray();
-        foreach ($post_detail as $value) {
-            File::delete('resources/upload/detail/'.$value["image"]);
-        }
-        $post = post::find($id);
+        $post = Post::find($id);
         File::delete('resources/upload/'.$post->image);
         $post->delete($id);
         return redirect()->route('admin.post.list')->with(['flash_level'=>'success','flash_message'=>'Delete post Sucess']);
@@ -73,16 +69,15 @@ class PostController extends Controller
 
     public function getEdit($id)
     {
-        $data = post::findOrFail($id)->toArray();
+        $data = Post::findOrFail($id)->toArray();
         $cate = Cate::select('id','name','parent_id')->get()->toArray();
-        $post_images = post::find($id)->pimages;
-        return view('admin.post.edit',compact('cate','data','id','post_images'));
+        return view('admin.post.edit',compact('cate','data','id'));
     }
 
     public function postEdit($id,Request $request)
     {
         //Kiem tra image chinh
-        $post = post::findOrFail($id);
+        $post = Post::findOrFail($id);
         $imgCurrent = 'resources/upload/'.Request::input('imgcurrent');
         
         if(Request::file('fileimages') == "") {
@@ -99,33 +94,20 @@ class PostController extends Controller
         }
 
 
-        //Kiem tra image detail
-        if(Request::file('fEditDetail') == "") {
-            echo "Khong co hinh detail";
-        }
-        else {
-            
-            foreach (Request::file('fEditDetail') as $file) {
-                $postImages = new post_image();
-                if(isset($file)) {
-                    $postImages->image = $file->getClientOriginalName();
-                    $postImages->post_id = $id;
-                    $file->move('resources/upload/detail/',$file->getClientOriginalName());
-                    $postImages->save();
-                }
-            }
-            
-        }
+       
+        
 
        
-        $post->name = Request::input('txtpostName');
-        $post->alias = changeTitle(Request::input('txtpostName'));
-        $post->price = Request::input('txtPrice');
+        $post->name = Request::input('txtPostName');
+
+        //dd($post->name);
+        $post->alias = changeTitle(Request::input('txtPostName'));
+        
         $post->keyword = Request::input('txtKeyword');
         $post->description =Request::input('txtDescription');
         $post->intro = Request::input('txtIntro');
         $post->content = Request::input('txtContent');
-        $post->user_id = Auth::user()->id;
+        $post->user_id = 7;
         $post->cate_id = Request::input('category');
         $post->save();
         return redirect()->route('admin.post.list')->with(['flash_level'=>'success','flash_message'=>'Edit Sucess']);

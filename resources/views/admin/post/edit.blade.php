@@ -44,12 +44,9 @@
                             </div>
                             <div class="form-group">
                                 <label>Name</label>
-                                <input class="form-control" name="txtProductName" placeholder="Please Enter Product Name" value="{!! old('txtProductName',isset($data) ? $data['name']: null) !!}" />
+                                <input class="form-control" name="txtPostName" placeholder="Please Enter Post Name" value="{!! old('txtPostName',isset($data) ? $data['name']: null) !!}" />
                             </div>
-                            <div class="form-group">
-                                <label>Price</label>
-                                <input class="form-control" name="txtPrice" placeholder="Please Enter Price of product" value="{!! old('txtPrice',isset($data) ? $data['price']: null) !!}"/>
-                            </div>
+                            
                             
                             <div class="form-group">
                                 <label>Intro</label>
@@ -95,19 +92,6 @@
                         
                     </div>
                     
-                    <div class="col-md-4">
-                        @foreach($product_images as $key => $item)
-                            <div class="form-group" id="{!! $key !!}">
-                                <img src="{!! asset('resources/upload/detail/'.$item['image'])  !!}" class="current_image_detail" idHinh="{!! $item['id'] !!}" id="{!! $key !!}" />
-                                <a href="javascript:void(0)" type="button" id="del_img_demo" class="btn btn-danger btn-circle icon_del"><i class="fa fa-times"></i></a>
-                                
-                            </div>
-                            <!--<input type="file" name="imageProductDetail[]" />!-->
-                        @endforeach
-                        <button class="btn btn-primary" type="button" id="addImages">Add images</button>
-                            <div id="insert">
-                                
-                            </div>
-                    </div>
+                  
 <form>                
 @endsection()
