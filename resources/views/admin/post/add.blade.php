@@ -48,6 +48,24 @@
                                 <label>Images</label>
                                 <input type="file" name="fileimages" value="{!! old('fileimages')!!}">
                             </div>
+                            <div class="form-group">
+                                <label>Type</label>
+                                <label class="radio-inline">
+                                    <input name="rdoType" value="0" type="radio">Normal
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="rdoType" value="1" checked="" type="radio">Popular
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="rdoType" value="2" type="radio">Top
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="rdoType" value="3" type="radio">Hot
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="rdoType" value="4" type="radio">Review
+                                </label>
+                            </div>
                             <!--<div class="form-group">
                                 <label>Category Status</label>
                                 <label class="radio-inline">

@@ -619,7 +619,7 @@ body.boxed { background: #eee; }
 /* nth level link */ 
 .navigation .menu li > a { 
 	float: left;
-	padding: 0px 25px;
+	padding: 0px 10px;
 }
 
 /* top level links - 45px total height */

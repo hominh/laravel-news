@@ -28,6 +28,7 @@ Route::get('/','HomeController@index');
 
 
 Route::group(['middleware' => ['web']], function () {
+	Route::get('product/{id}/{tensanpham}',['as'=>'product','uses'=>'ProductController@detail']);
 	Route::get('/','HomeController@index');
     Route::group(['prefix'=>'admin'],function(){
 		Route::group(['prefix'=>'cate'],function(){
@@ -48,6 +49,7 @@ Route::group(['middleware' => ['web']], function () {
 			Route::get('edit/{id}',['as'=>'admin.post.getEdit','uses'=>'PostController@getEdit']);
 			Route::get('delImg/{id}',['as'=>'admin.post.getDelImg','uses'=>'PostController@getDelImg']);
 			Route::post('edit/{id}',['as'=>'admin.post.postEdit','uses'=>'PostController@postEdit']);
+			Route::get('search',['as'=>'admin.post.search','uses'=>'PostController@search']);
 		});
 	});
 });

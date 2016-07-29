@@ -39,6 +39,7 @@ class PostController extends Controller
         $post->user_id = 7;
         $post->cate_id = $request->category;
         $request->file('fileimages')->move('resources/upload/',$file_image);
+        $post->type = $request->rdoType;
         //dd($request->all());
         $post->save();
         return redirect()->route('admin.post.list')->with(['flash_level'=>'success','flash_message'=>'Add Post Sucess']);
@@ -70,6 +71,7 @@ class PostController extends Controller
     public function getEdit($id)
     {
         $data = Post::findOrFail($id)->toArray();
+
         $cate = Cate::select('id','name','parent_id')->get()->toArray();
         return view('admin.post.edit',compact('cate','data','id'));
     }
@@ -109,6 +111,7 @@ class PostController extends Controller
         $post->content = Request::input('txtContent');
         $post->user_id = 7;
         $post->cate_id = Request::input('category');
+        $post->type = Request::input('rdoType');
         $post->save();
         return redirect()->route('admin.post.list')->with(['flash_level'=>'success','flash_message'=>'Edit Sucess']);
     }
@@ -128,4 +131,30 @@ class PostController extends Controller
             return "ok";
         }
     }
+
+
+    public function search() {
+        $keyword = "Phát biểu trong cuộc họp báo ở Trung Quốc, HLV Mourinho tự tin rằng MU có thể sở hữu tiền vệ Paul Pogba trong thời gian tới.";
+        $cate_id = "1";
+        $data = DB::table('posts')
+                    ->leftJoin('cates','posts.cate_id','=','cates.id')
+                    ->select('posts.id','posts.name','posts.intro','posts.created_at','cates.name as catename');
+        if($keyword != '') {
+            $results = $data->where('posts.name', 'LIKE', '%'. $keyword .'%');
+                          
+                            
+        }
+        if($cate_id != '') {
+            $results = $results->where('cate_id', '=',$cate_id);
+        }
+        $results = $results->get();
+        dd($results);
+
+    }
+
+
+
+
+
+
 }

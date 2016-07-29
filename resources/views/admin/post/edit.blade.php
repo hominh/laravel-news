@@ -37,6 +37,7 @@
                             <div class="form-group">
                                 <label>Category</label>
                                 <select class="form-control" name="category">
+
                                     <option value="">Select Category</option>
                                     
                                    <?php cate_parent($cate,0,"--",$data["cate_id"]); ?>
@@ -84,7 +85,56 @@
                                     <input name="rdoStatus" value="2" type="radio">Invisible
                                 </label>
                             </div>!-->
+                            <div class="form-group">
+                                <label>Type</label>
+                                <br />
+                                <label class="radio-inline">
 
+                                    
+                                    <br />
+                                    <input name="rdoType" value="0" type="radio"
+                                        @if($data["type"] == 0)
+                                            checked = "checked"
+                                        @endif
+
+                                    >
+                                    
+                                    Normal
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="rdoType" value="1"  type="radio" 
+                                        @if($data["type"] == 1)
+                                            checked = "checked"
+                                        @endif  
+                                    >
+                                    
+                                    Popular
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="rdoType" value="2" type="radio"
+                                        @if($data["type"] == 2)
+                                            checked = "checked"
+                                        @endif
+                                    >
+                                    Top
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="rdoType" value="3" type="radio"
+                                        @if($data["type"] == 3)
+                                            checked = "checked"
+                                        @endif
+                                    >
+                                    Hot
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="rdoType" value="3" type="radio"
+                                        @if($data["type"] == 4)
+                                            checked = "checked"
+                                        @endif
+                                    >
+                                    Review
+                                </label>
+                            </div>
                             <button type="submit" class="btn btn-default">Product Add</button>
                             <button type="reset" class="btn btn-default">Reset</button>
                     </div>

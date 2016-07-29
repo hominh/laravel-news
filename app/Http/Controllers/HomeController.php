@@ -24,13 +24,30 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //$products = DB::table('products')->select('id','name','price','alias','image')->orderBy('id','DESC')->skip(0)->take(4)->get();
+        $postSukienInHome = $this->getPostInHomeByCategory(1,4);
+        $postXahoiInHome = $this->getPostInHomeByCategory(2,4);
         
-        
-        
-        $view = View::make('frontend.pages.home');
-        
+        $postThegioiInHome = $this->getPostInHomeByCategory(3,5);
+
+        $postThethaoInHome = $this->getPostInHomeByCategory(4,5);
+
+        $postGiaoducInHome = $this->getPostInHomeByCategory(5,4);
+
+        $postKinhdoanhInHome = $this->getPostInHomeByCategory(6,4);
+
+        $postVanhoaInHome = $this->getPostInHomeByCategory(9,4);
+
+        $view = View::make('frontend.pages.home',compact('postSukienInHome','postXahoiInHome','postThegioiInHome','postThethaoInHome','postGiaoducInHome','postKinhdoanhInHome','postVanhoaInHome'));
         return $view;
+    }
+
+    public function getPostInHomeByCategory($cate_id,$num) {
+        $postInHome = DB::table('posts')
+                    ->leftJoin('cates','posts.cate_id','=','cates.id')
+                    ->select('posts.id','posts.name','posts.created_at','posts.image','posts.intro','cates.name as catename')
+                    ->where('cate_id','=',$cate_id)
+                    ->orderBy('id','DESC')->skip(0)->take($num)->get();
+        return $postInHome;
     }
 
     /*public function category($cate_id)

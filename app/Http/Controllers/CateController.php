@@ -45,8 +45,8 @@ class CateController extends Controller
     public function getEdit($id)
     {
         $data = Cate::findOrFail($id)->toArray();
-        $parentCate = Cate::select('id','name','parent_id')->get()->toArray();
-        return view('admin.cate.edit',compact('parentCate','data','id'));
+        $parent = Cate::select('id','name','parent_id')->get()->toArray();
+        return view('admin.cate.edit',compact('parent','data','id'));
     }
 
     public function postEdit(Request $request,$id)

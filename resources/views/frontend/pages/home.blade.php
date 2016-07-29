@@ -8,110 +8,84 @@
                         <div class='row cf highlights-box'>
                             <div class='column half'>
                                 <section class='highlights'>
-                                    <span class='cat-title larger cat-14'><a href='#'> Title 1</a></span>
+                                    <span class='cat-title larger cat-14'><a href='#'>{!! $postSukienInHome[0]->catename !!}</a></span>
                                     <article>
                                         <a class='image-link' href='#'>
-                                            <img class='image wp-post-image no-display appear' width='351' height='185' title='' alt=''src='images/5181279108_7c98889c6f_b-351x185.jpg' />
+                                            <img class='image wp-post-image no-display appear' width='351' height='185' title='' alt=''src='{!! asset('resources/upload/'.$postSukienInHome[0]->image) !!}' />
                                             <span class='post-format-icon gallery'><i class='fa fa-picture-o'></i></span>
                                         </a>
                                         <div class='meta'>
-                                            <time itemprop='datePublished' datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
+                                            <time itemprop='datePublished' datetime='{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $postSukienInHome[0]->created_at)->format('M d, Y') }}'>{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $postSukienInHome[0]->created_at)->format('M d, Y') }} </time>
                                             <!--<span class='comments'>
 
                                             </span> !-->
 
                                         </div><!-- End .meta !-->
                                         <h2 itemprop='name'>
-                                            <a title='' href='#'>Premiere for The Invisible Woman</a>
+                                            <a title='' href='#'>{!! $postSukienInHome[0]->name !!}</a>
                                         </h2>
                                         <div class='excerpt'>
-                                            <p>Integer convallis convallis interdum. Ut luctus justo elit, sit amet sodales purus vulputate non. Integer convallis convallis interdum. Ut luctus justo elit, sit amet sodales purus vulputate non. </p>
+                                            <p>{!! $postSukienInHome[0]->intro !!}</p>
                                         </div>
                                     </article>
 
                                     <ul class='block posts-list thumb'>
-                                        <li>
-                                            <a href='#'>
-                                                <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='images/9882288604_ada2a9069a_k-110x96.jpg' />
-                                            </a>
-                                            <div class='content'>
-                                                <time datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
-                                                <a title="Frankenstein Fails to Scare Cinemas" href="#">Frankenstein Fails to Scare CinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsf</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href='#'>
-                                                <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='images/9882288604_ada2a9069a_k-110x96.jpg' />
-                                            </a>
-                                            <div class='content'>
-                                                <time datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
-                                                <a title="Frankenstein Fails to Scare Cinemas" href="#">Frankenstein Fails to Scare CinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsf</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href='#'>
-                                                <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='images/9882288604_ada2a9069a_k-110x96.jpg' />
-                                            </a>
-                                            <div class='content'>
-                                                <time datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
-                                                <a title="Frankenstein Fails to Scare Cinemas" href="#">Frankenstein Fails to Scare CinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsf</a>
-                                            </div>
-                                        </li>
+                                        @foreach($postSukienInHome as $key=>$item)
+                                            @if($key != 0)
+                                                <li>
+                                                    <a href='#'>
+                                                        <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='{!! asset('resources/upload/'.$item->image) !!}' />
+                                                    </a>
+                                                    <div class='content'>
+                                                        <time itemprop='datePublished' datetime='{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item->created_at)->format('M d, Y') }}'>{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item->created_at)->format('M d, Y') }} </time>
+                                                        <a title='{!! $item->name !!}' href="#">{!! $item->name !!}</a>
+                                                    </div>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                        
                                     </ul>
 
                                 </section>
                             </div><!-- End .column half !-->
                             <div class='column half'>
                                 <section class='highlights'>
-                                    <span class='cat-title larger cat-14'><a href='#'> Title 1</a></span>
+                                    <span class='cat-title larger cat-14'><a href='#'>{!! $postXahoiInHome[0]->catename !!}</a></span>
                                     <article>
                                         <a class='image-link' href='#'>
-                                            <img class='image wp-post-image no-display appear' width='351' height='185' title='' alt=''src='images/5181279108_7c98889c6f_b-351x185.jpg' />
+                                            <img class='image wp-post-image no-display appear' width='351' height='185' title='' alt=''src='{!! asset('resources/upload/'.$postXahoiInHome[0]->image) !!}' />
                                             <span class='post-format-icon gallery'><i class='fa fa-picture-o'></i></span>
                                         </a>
                                         <div class='meta'>
-                                            <time itemprop='datePublished' datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
+                                            <time itemprop='datePublished' datetime='{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $postXahoiInHome[0]->created_at)->format('M d, Y') }}'>{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $postXahoiInHome[0]->created_at)->format('M d, Y') }} </time>
                                             <!--<span class='comments'>
 
                                             </span> !-->
 
                                         </div><!-- End .meta !-->
                                         <h2 itemprop='name'>
-                                            <a title='' href='#'>Premiere for The Invisible Woman</a>
+                                            <a title='' href='#'>{!! $postXahoiInHome[0]->name !!}</a>
                                         </h2>
                                         <div class='excerpt'>
-                                            <p>Integer convallis convallis interdum. Ut luctus justo elit, sit amet sodales purus vulputate non. Integer convallis convallis interdum. Ut luctus justo elit, sit amet sodales purus vulputate non. </p>
+                                            <p>{!! $postXahoiInHome[0]->intro !!}</p>
                                         </div>
                                     </article>
 
                                     <ul class='block posts-list thumb'>
-                                        <li>
-                                            <a href='#'>
-                                                <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='images/9882288604_ada2a9069a_k-110x96.jpg' />
-                                            </a>
-                                            <div class='content'>
-                                                <time datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
-                                                <a title="Frankenstein Fails to Scare Cinemas" href="#">Frankenstein Fails to Scare CinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsf</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href='#'>
-                                                <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='images/9882288604_ada2a9069a_k-110x96.jpg' />
-                                            </a>
-                                            <div class='content'>
-                                                <time datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
-                                                <a title="Frankenstein Fails to Scare Cinemas" href="#">Frankenstein Fails to Scare CinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsf</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href='#'>
-                                                <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='images/9882288604_ada2a9069a_k-110x96.jpg' />
-                                            </a>
-                                            <div class='content'>
-                                                <time datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
-                                                <a title="Frankenstein Fails to Scare Cinemas" href="#">Frankenstein Fails to Scare CinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsf</a>
-                                            </div>
-                                        </li>
+                                        @foreach($postXahoiInHome as $key=>$item)
+                                            @if($key != 0)
+                                                <li>
+                                                    <a href='#'>
+                                                        <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='{!! asset('resources/upload/'.$item->image) !!}' />
+                                                    </a>
+                                                    <div class='content'>
+                                                        <time itemprop='datePublished' datetime='{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item->created_at)->format('M d, Y') }}'>{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item->created_at)->format('M d, Y') }} </time>
+                                                        <a title='{!! $item->name !!}' href="#">{!! $item->name !!}</a>
+                                                    </div>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                        
                                     </ul>
 
                                 </section>
@@ -120,7 +94,7 @@
 
                         <section class='news-focus'>
                             <div class='section-head heading cat-16'>
-                                <a title='' href='#'>Entertainment</a>
+                                <a title='' href='#'>{!! $postThegioiInHome[0]->catename !!}</a>
                                 <ul class='subcats'>
                                     <li><a data-id='0' class='active' href='#'>All</a></li>
                                     <li><a data-id='1' href='#'>Fashion</a></li>
@@ -131,61 +105,39 @@
                                 <div class='column half blocks'>
                                     <article>
                                         <a class='image-link' href='#'>
-                                            <img class='image wp-post-image no-display appear' width='351' height='185' title='' alt=''src='images/5181279108_7c98889c6f_b-351x185.jpg' />
+                                            <img class='image wp-post-image no-display appear' width='351' height='185' title='' alt=''src='{!! asset('resources/upload/'.$postThegioiInHome[0]->image) !!}' />
                                         </a>
                                         <div class='meta'>
-                                            <time itemprop='datePublished' datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
+                                            <time itemprop='datePublished' datetime='{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $postThegioiInHome[0]->created_at)->format('M d, Y') }}'>{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $postThegioiInHome[0]->created_at)->format('M d, Y') }} </time>
                                             <!--<span class='comments'>
 
                                             </span> !-->
 
                                         </div><!-- End .meta !-->
                                         <h2 itemprop='name'>
-                                            <a title='' href='#'>Premiere for The Invisible Woman</a>
+                                            <a title='' href='#'>{!! $postThegioiInHome[0]->name !!}</a>
                                         </h2>
                                         <div class='excerpt'>
-                                            <p>Integer convallis convallis interdum. Ut luctus justo elit, sit amet sodales purus vulputate non. Integer convallis convallis interdum. Ut luctus justo elit, sit amet sodales purus vulputate non. </p>
+                                            <p>{!! $postThegioiInHome[0]->intro !!}</p>
                                         </div>
                                     </article>
                                 </div><!-- End .column half blocks !-->
 
                                 <ul class='column half block posts-list thumb'>
-                                    <li>
-                                        <a href='#'>
-                                            <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='images/9882288604_ada2a9069a_k-110x96.jpg' />
-                                        </a>
-                                        <div class='content'>
-                                            <time datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
-                                            <a title="Frankenstein Fails to Scare Cinemas" href="#">Frankenstein Fails to Scare CinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsf</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href='#'>
-                                            <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='images/9882288604_ada2a9069a_k-110x96.jpg' />
-                                        </a>
-                                        <div class='content'>
-                                            <time datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
-                                            <a title="Frankenstein Fails to Scare Cinemas" href="#">Frankenstein Fails to Scare CinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsf</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href='#'>
-                                            <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='images/9882288604_ada2a9069a_k-110x96.jpg' />
-                                        </a>
-                                        <div class='content'>
-                                            <time datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
-                                            <a title="Frankenstein Fails to Scare Cinemas" href="#">Frankenstein Fails to Scare CinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsf</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href='#'>
-                                            <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='images/9882288604_ada2a9069a_k-110x96.jpg' />
-                                        </a>
-                                        <div class='content'>
-                                            <time datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
-                                            <a title="Frankenstein Fails to Scare Cinemas" href="#">Frankenstein Fails to Scare CinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsf</a>
-                                        </div>
-                                    </li>
+                                    @foreach($postThegioiInHome as $key=>$item)
+                                            @if($key != 0)
+                                                <li>
+                                                    <a href='#'>
+                                                        <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='{!! asset('resources/upload/'.$item->image) !!}' />
+                                                    </a>
+                                                    <div class='content'>
+                                                        <time itemprop='datePublished' datetime='{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item->created_at)->format('M d, Y') }}'>{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item->created_at)->format('M d, Y') }} </time>
+                                                        <a title='{!! $item->name !!}' href="#">{!! $item->name !!}</a>
+                                                    </div>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    
 
                                 </ul>
 
@@ -196,7 +148,7 @@
 
                         <section class='news-focus'>
                             <div class='section-head heading cat-16'>
-                                <a title='' href='#'>Entertainment</a>
+                                <a title='' href='#'>{!! $postThethaoInHome[0]->catename !!}</a>
                                 <ul class='subcats'>
                                     <li><a data-id='0' class='active' href='#'>All</a></li>
                                     <li><a data-id='1' href='#'>Fashion</a></li>
@@ -207,61 +159,39 @@
                                 <div class='column half blocks'>
                                     <article>
                                         <a class='image-link' href='#'>
-                                            <img class='image wp-post-image no-display appear' width='351' height='185' title='' alt=''src='images/5181279108_7c98889c6f_b-351x185.jpg' />
+                                            <img class='image wp-post-image no-display appear' width='351' height='185' title='' alt=''src='{!! asset('resources/upload/'.$postThethaoInHome[0]->image) !!}' />
                                         </a>
                                         <div class='meta'>
-                                            <time itemprop='datePublished' datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
+                                            <time itemprop='datePublished' datetime='{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $postThethaoInHome[0]->created_at)->format('M d, Y') }}'>{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $postThethaoInHome[0]->created_at)->format('M d, Y') }} </time>
                                             <!--<span class='comments'>
 
                                             </span> !-->
 
                                         </div><!-- End .meta !-->
                                         <h2 itemprop='name'>
-                                            <a title='' href='#'>Premiere for The Invisible Woman</a>
+                                            <a title='' href='#'>{!! $postThethaoInHome[0]->name !!}</a>
                                         </h2>
                                         <div class='excerpt'>
-                                            <p>Integer convallis convallis interdum. Ut luctus justo elit, sit amet sodales purus vulputate non. Integer convallis convallis interdum. Ut luctus justo elit, sit amet sodales purus vulputate non. </p>
+                                            <p>{!! $postThethaoInHome[0]->intro !!}</p>
                                         </div>
                                     </article>
                                 </div><!-- End .column half blocks !-->
 
                                 <ul class='column half block posts-list thumb'>
-                                    <li>
-                                        <a href='#'>
-                                            <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='images/9882288604_ada2a9069a_k-110x96.jpg' />
-                                        </a>
-                                        <div class='content'>
-                                            <time datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
-                                            <a title="Frankenstein Fails to Scare Cinemas" href="#">Frankenstein Fails to Scare CinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsf</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href='#'>
-                                            <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='images/9882288604_ada2a9069a_k-110x96.jpg' />
-                                        </a>
-                                        <div class='content'>
-                                            <time datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
-                                            <a title="Frankenstein Fails to Scare Cinemas" href="#">Frankenstein Fails to Scare CinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsf</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href='#'>
-                                            <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='images/9882288604_ada2a9069a_k-110x96.jpg' />
-                                        </a>
-                                        <div class='content'>
-                                            <time datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
-                                            <a title="Frankenstein Fails to Scare Cinemas" href="#">Frankenstein Fails to Scare CinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsf</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href='#'>
-                                            <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='images/9882288604_ada2a9069a_k-110x96.jpg' />
-                                        </a>
-                                        <div class='content'>
-                                            <time datetime='2013-12-21T18:05:28+00:00'>Dec 21, 2013 </time>
-                                            <a title="Frankenstein Fails to Scare Cinemas" href="#">Frankenstein Fails to Scare CinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsfCinemasdfdsf</a>
-                                        </div>
-                                    </li>
+                                    @foreach($postThethaoInHome as $key=>$item)
+                                        @if($key != 0)
+                                            <li>
+                                                <a href='#'>
+                                                    <img class='image wp-post-image no-display appear' width='110' height='96' title='' alt=''src='{!! asset('resources/upload/'.$item->image) !!}' />
+                                                </a>
+                                                <div class='content'>
+                                                    <time itemprop='datePublished' datetime='{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item->created_at)->format('M d, Y') }}'>{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item->created_at)->format('M d, Y') }} </time>
+                                                    <a title='{!! $item->name !!}' href="#">{!! $item->name !!}</a>
+                                                </div>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                    
 
                                 </ul>
 
@@ -281,11 +211,11 @@
                             <div class="column one-third">
                                 <section class="highlights">
                                     <div class="section-head cat-text-19">
-                                        <a href="http://theme-sphere.com/smart-mag/category/world-news/movies/">Movies</a>
+                                        <a href="http://theme-sphere.com/smart-mag/category/world-news/movies/">{!! $postGiaoducInHome[0]->catename !!}</a>
                                     </div>
                                     <article itemtype="http://schema.org/Article" itemscope="">
                                         <a class="image-link" itemprop="url" title="Become a Professional DJ With Jane" href="#">
-                                            <img width="214" height="140" itemprop="image" title="Become a Professional DJ With Jane" alt="5138037389_cd13e45211_b" class="image wp-post-image no-display appear" src="images/5138037389_cd13e45211_b1-214x140.jpg">
+                                            <img width="214" height="140" itemprop="image" title="Become a Professional DJ With Jane" alt="5138037389_cd13e45211_b" class="image wp-post-image no-display appear" src="{!! asset('resources/upload/'.$postGiaoducInHome[0]->image) !!}">
                                         </a>
                                         <div class="meta">
                                             <time itemprop="datePublished" datetime="2014-12-16T16:55:33+00:00">Dec 16, 2014 </time>
@@ -295,39 +225,34 @@
                                             </span>
                                         </div>
                                         <h2 itemprop="name headline">
-                                            <a title="Become a Professional DJ With Jane" href="#">Become a Professional DJ With Jane</a>
+                                            <a title="Become a Professional DJ With Jane" href="#">{!! $postGiaoducInHome[0]->name !!}</a>
                                         </h2>
                                     </article>
                                     <ul class="block posts">
-                                        <li>
-                                            <i class="fa fa-angle-right"></i>
-                                            <a class="title" title="Honored at The Photography Awards" href="#">
-                                            Honored at The Photography Awards                   
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-angle-right"></i>
-                                            <a class="title" title="Honored at The Photography Awards" href="#">
-                                            Honored at The Photography Awards                   
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-angle-right"></i>
-                                            <a class="title" title="Honored at The Photography Awards" href="#">
-                                            Honored at The Photography Awards                   
-                                            </a>
-                                        </li>
+                                        @foreach($postGiaoducInHome as $key=>$item)
+                                            @if($key != 0)
+                                                <li>
+                                                    <i class="fa fa-angle-right"></i>
+                                                    <a class="title" title="{!! $item->name !!}" href="#">
+                                                    {!! $item->name !!}               
+                                                    </a>
+                                                </li>
+                                            @endif
+
+
+                                        @endforeach
+                                        
                                     </ul>
                                 </section>
                             </div>
                             <div class="column one-third">
                                 <section class="highlights">
                                     <div class="section-head cat-text-19">
-                                        <a href="http://theme-sphere.com/smart-mag/category/world-news/movies/">Movies</a>
+                                        <a href="http://theme-sphere.com/smart-mag/category/world-news/movies/">{!! $postKinhdoanhInHome[0]->catename !!}</a>
                                     </div>
                                     <article itemtype="http://schema.org/Article" itemscope="">
                                         <a class="image-link" itemprop="url" title="Become a Professional DJ With Jane" href="#">
-                                            <img width="214" height="140" itemprop="image" title="Become a Professional DJ With Jane" alt="5138037389_cd13e45211_b" class="image wp-post-image no-display appear" src="images/5138037389_cd13e45211_b1-214x140.jpg">
+                                            <img width="214" height="140" itemprop="image" title="Become a Professional DJ With Jane" alt="5138037389_cd13e45211_b" class="image wp-post-image no-display appear" src="{!! asset('resources/upload/'.$postKinhdoanhInHome[0]->image) !!}">
                                         </a>
                                         <div class="meta">
                                             <time itemprop="datePublished" datetime="2014-12-16T16:55:33+00:00">Dec 16, 2014 </time>
@@ -337,39 +262,34 @@
                                             </span>
                                         </div>
                                         <h2 itemprop="name headline">
-                                            <a title="Become a Professional DJ With Jane" href="#">Become a Professional DJ With Jane</a>
+                                            <a title="Become a Professional DJ With Jane" href="#">{!! $postKinhdoanhInHome[0]->name !!}</a>
                                         </h2>
                                     </article>
                                     <ul class="block posts">
-                                        <li>
-                                            <i class="fa fa-angle-right"></i>
-                                            <a class="title" title="Honored at The Photography Awards" href="#">
-                                            Honored at The Photography Awards                   
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-angle-right"></i>
-                                            <a class="title" title="Honored at The Photography Awards" href="#">
-                                            Honored at The Photography Awards                   
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-angle-right"></i>
-                                            <a class="title" title="Honored at The Photography Awards" href="#">
-                                            Honored at The Photography Awards                   
-                                            </a>
-                                        </li>
+                                        @foreach($postKinhdoanhInHome as $key=>$item)
+                                            @if($key != 0)
+                                                <li>
+                                                    <i class="fa fa-angle-right"></i>
+                                                    <a class="title" title="{!! $item->name !!}" href="#">
+                                                    {!! $item->name !!}               
+                                                    </a>
+                                                </li>
+                                            @endif
+
+
+                                        @endforeach
+                                        
                                     </ul>
                                 </section>
                             </div>
                             <div class="column one-third">
                                 <section class="highlights">
                                     <div class="section-head cat-text-19">
-                                        <a href="http://theme-sphere.com/smart-mag/category/world-news/movies/">Movies</a>
+                                        <a href="http://theme-sphere.com/smart-mag/category/world-news/movies/">{!! $postVanhoaInHome[0]->catename !!}</a>
                                     </div>
                                     <article itemtype="http://schema.org/Article" itemscope="">
                                         <a class="image-link" itemprop="url" title="Become a Professional DJ With Jane" href="#">
-                                            <img width="214" height="140" itemprop="image" title="Become a Professional DJ With Jane" alt="5138037389_cd13e45211_b" class="image wp-post-image no-display appear" src="images/5138037389_cd13e45211_b1-214x140.jpg">
+                                            <img width="214" height="140" itemprop="image" title="Become a Professional DJ With Jane" alt="5138037389_cd13e45211_b" class="image wp-post-image no-display appear" src="{!! asset('resources/upload/'.$postVanhoaInHome[0]->image) !!}">
                                         </a>
                                         <div class="meta">
                                             <time itemprop="datePublished" datetime="2014-12-16T16:55:33+00:00">Dec 16, 2014 </time>
@@ -379,28 +299,23 @@
                                             </span>
                                         </div>
                                         <h2 itemprop="name headline">
-                                            <a title="Become a Professional DJ With Jane" href="#">Become a Professional DJ With Jane</a>
+                                            <a title="Become a Professional DJ With Jane" href="#">{!! $postVanhoaInHome[0]->name !!}</a>
                                         </h2>
                                     </article>
                                     <ul class="block posts">
-                                        <li>
-                                            <i class="fa fa-angle-right"></i>
-                                            <a class="title" title="Honored at The Photography Awards" href="#">
-                                            Honored at The Photography Awards                   
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-angle-right"></i>
-                                            <a class="title" title="Honored at The Photography Awards" href="#">
-                                            Honored at The Photography Awards                   
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-angle-right"></i>
-                                            <a class="title" title="Honored at The Photography Awards" href="#">
-                                            Honored at The Photography Awards                   
-                                            </a>
-                                        </li>
+                                        @foreach($postVanhoaInHome as $key=>$item)
+                                            @if($key != 0)
+                                                <li>
+                                                    <i class="fa fa-angle-right"></i>
+                                                    <a class="title" title="{!! $item->name !!}" href="#">
+                                                    {!! $item->name !!}               
+                                                    </a>
+                                                </li>
+                                            @endif
+
+
+                                        @endforeach
+                                        
                                     </ul>
                                 </section>
                             </div>

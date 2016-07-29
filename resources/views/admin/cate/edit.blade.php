@@ -19,7 +19,7 @@
                                 <select class="form-control" name="category">
                                     <option value="">Select Category</option>
                                     
-                                   <?php cate_parent($parentCate,0,"--",$data["parent_id"]); ?>
+                                   <?php cate_parent($parent,0,"--",$data["parent_id"]); ?>
                                 </select>
                             </div>
                             <div class="form-group">
